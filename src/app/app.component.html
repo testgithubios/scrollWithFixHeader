@@ -1,0 +1,72 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align: center">
+	<h1>Welcome to {{ title }}!</h1>
+	<nav>
+		<a routerLink="/dashboard">Dashboard</a> 
+		<a routerLink="/heroes">Heroes</a>
+	</nav>
+</div> -->
+<!-- <app-heroes></app-heroes> -->
+<!-- <router-outlet></router-outlet>
+<app-messages></app-messages> -->
+<!-- 
+<table>
+	<thead>
+		<tr>
+			<th rowspan="2">Machine</th>
+			<th *ngFor="let machineView of machineViews">{{machineView.customer.name}}</th>
+		</tr>
+		<tr>
+			<th *ngFor="let machineView of machineViews">{{machineView.belt.name}}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<ng-container *ngFor="let line of lines">
+			<tr>
+				<td>{{line.name}}</td>
+			</tr>
+			<tr *ngFor="let machine of line.machines">
+				<td>
+					{{machine.name}}
+				</td>
+				<td *ngFor="let machineView of machineViews">{{machineView.belt.name}}</td>
+			</tr>	
+		</ng-container>
+	</tbody>
+</table> -->
+
+<div class="total-wrapper">
+    <div class="fix-column">
+        <div class="thead">
+			<span style="line-height: 40px">Machine</span>
+		</div>
+        <div class="tbody">
+			<ng-container *ngFor="let line of lines">
+				<div class="trow">
+					<span>{{line.name}}</span>
+				</div>
+				<div class="trow" *ngFor="let machine of line.machines" >
+					<span>{{machine.name}}</span>
+				</div>
+			</ng-container>
+        </div>
+    </div>
+    <div class="rest-columns">
+        <div class="thead">
+            <span *ngFor="let machineView of machineViews">
+				{{machineView.customer.name}}<br>
+				{{machineView.belt.name}}
+			</span>
+		</div>
+		<div class="tbody">
+				<ng-container *ngFor="let line of lines">
+					<div class="trow">
+						<span>{{line.name}}</span>
+					</div>
+					<div class="trow" *ngFor="let machine of line.machines" >
+							<span *ngFor="let machineView of machineViews">{{machineView.belt.name}}</span>
+					</div>
+				</ng-container>
+        </div>
+    </div>
+</div>
